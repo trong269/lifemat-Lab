@@ -1,0 +1,24 @@
+# Cấu hình pipeline dùng trong Docker nộp bài (chỉ model chạy local, không gọi API ngoài).
+asr:
+  plugin: openai_asr
+  base_url: http://127.0.0.1:9000/v1     # servers/asr_server.py chạy trong container
+  model: asr
+  api_key: EMPTY
+postprocess: []
+llm:
+  plugin: openai_compat
+  base_url: http://127.0.0.1:8000/v1     # vLLM chạy trong container
+  model: lifemate-llm
+  api_key: EMPTY
+  temperature: 0.0
+  seed: 0
+  max_tokens: 512
+renderer: compact
+prompt:
+  plugin: rules
+  rules: rules_v2
+agent:
+  plugin: react
+  max_steps: 10
+guards: [validate_repair, iso_time, ask_params_order, dedupe_reads, ask_last]
+timeout_s: 28

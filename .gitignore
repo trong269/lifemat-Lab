@@ -1,0 +1,26 @@
+# dữ liệu BTC — KHÔNG đưa lên git (BTC không cho phát tán); khai báo đường dẫn ở trang Dữ liệu
+/train/
+/public_test/
+/private_test/
+*_environment/
+# dữ liệu riêng từng máy: DB, kết quả chạy, cache, khoá API, file dự đoán
+/lab_data/
+# trọng số model, môi trường server
+/models/
+servers/.venv/
+servers/.venv-gpu/
+servers/*.pid
+servers/.*.pid
+servers/*.log
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# ui
+ui/node_modules/
+ui/dist/
+# khác
+__MACOSX/
+.DS_Store
+*.wav

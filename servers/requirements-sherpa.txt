@@ -1,0 +1,8 @@
+# server ASR backend sherpa-onnx (Zipformer ONNX, chạy CPU)
+sherpa-onnx>=1.12.6
+soundfile>=0.12
+numpy>=1.26
+scipy>=1.12
+fastapi>=0.115
+uvicorn>=0.30
+python-multipart>=0.0.9

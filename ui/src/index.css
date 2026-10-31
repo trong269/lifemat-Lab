@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-size: 14px; }
+  body { @apply bg-slate-50 text-slate-900 antialiased dark:bg-[#111214] dark:text-slate-100; }
+  code, pre, .mono { @apply font-mono; }
+  ::selection { @apply bg-accent-200 dark:bg-accent-800; }
+}
+
+@layer components {
+  .card { @apply rounded-lg border border-slate-200 bg-white dark:border-slate-800 dark:bg-[#18191c]; }
+  .input {
+    @apply block w-full rounded-md border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-slate-900 placeholder:text-slate-400
+      focus:border-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500/20
+      disabled:cursor-not-allowed disabled:opacity-60
+      dark:border-slate-700 dark:bg-[#111214] dark:text-slate-100 dark:placeholder:text-slate-500;
+  }
+  .label { @apply mb-1 block text-xs font-medium text-slate-600 dark:text-slate-400; }
+  .hint { @apply mt-1 text-xs text-slate-500 dark:text-slate-500; }
+  .tbl { @apply w-full border-collapse text-sm; }
+  .tbl th { @apply sticky top-0 z-[1] whitespace-nowrap border-b border-slate-200 bg-slate-50 px-2.5 py-1.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 dark:border-slate-800 dark:bg-[#1d1e22] dark:text-slate-400; }
+  .tbl td { @apply border-b border-slate-100 px-2.5 py-1.5 align-top dark:border-slate-800/70; }
+  .tbl tbody tr:hover td { @apply bg-slate-50 dark:bg-white/[0.03]; }
+  .tbl tr.clickable { @apply cursor-pointer; }
+  .tbl tr.selected td { @apply bg-accent-50 dark:bg-accent-900/30; }
+  .link { @apply text-accent-600 hover:underline dark:text-accent-400; }
+  .muted { @apply text-slate-500 dark:text-slate-400; }
+  .kbd { @apply rounded border border-slate-300 bg-slate-100 px-1 font-mono text-[11px] dark:border-slate-600 dark:bg-slate-800; }
+}
+
+.cm-editor { font-size: 12.5px; }
+.cm-editor.cm-focused { outline: none !important; }
+.cm-wrap { @apply overflow-hidden rounded-md border border-slate-300 dark:border-slate-700; }
+
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  @apply rounded-md !border-slate-200 !bg-white text-xs shadow-md dark:!border-slate-700 dark:!bg-[#1d1e22];
+}
+.recharts-cartesian-axis-tick-value { font-size: 11px; }
